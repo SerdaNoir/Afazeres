@@ -45,9 +45,6 @@ if(tasksFromLocalStorage){
 
 }
 
-
-
-
 saveBtn.addEventListener("click", function() { 
   if(/[a-zA-Z]/.test(titleInput.value) && /[a-zA-Z]/.test(descriptionInput.value)) {
     myTitle.push(titleInput.value)
@@ -84,22 +81,27 @@ window.onload = function() {
 }
 
 function render(tasks, description) {
-  let listItems = ""
-  for(i = 0; i<tasks.length, i<description.length; i++){
+  let listItems = "";
+  for(let i = 0; i < tasks.length && i < description.length; i++) {
     listItems += `
     <div class="task">
-    <p>
-      <b>
-      ${tasks[i]}
-      </b>
-   </p>
-    <p>
-      ${description[i]}
-    </p>
-    </div>`
+      <p><b>${tasks[i]}</b></p>
+      <p>${description[i]}</p>
+      <button class="delete-btn" index="${i}">Excluir</button>
+    </div>`;
   }
-  titleEl.innerHTML = listItems
+  titleEl.innerHTML = listItems;
 
-
+  const deleteButtons = document.querySelectorAll(".delete-btn");
+  deleteButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      const index = parseInt(button.getAttribute("index"));
+      myTitle.splice(index, 1);
+      myDescription.splice(index, 1);
+      localStorage.setItem("myTitle", JSON.stringify(myTitle));
+      localStorage.setItem("myDescription", JSON.stringify(myDescription));
+      render(myTitle, myDescription);
+    });
+  });
 }
 
