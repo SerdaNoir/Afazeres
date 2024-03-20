@@ -5,8 +5,6 @@ Afazeres - Extensão do Google Chrome
 Características
 Adicionar Tarefas: Com um simples clique, você pode adicionar novas tarefas à sua lista. Basta digitar a descrição da tarefa e pressionar Enter.
 
-Editar Tarefas: Clique em uma tarefa existente para editar sua descrição.
-
 Marcar Tarefas como Concluídas: Quando você conclui uma tarefa, pode marcá-la como concluída clicando na caixa de seleção ao lado da descrição da tarefa. As tarefas concluídas são mostradas em uma cor diferente para facilitar a visualização.
 
 Excluir Tarefas: As tarefas concluídas podem ser excluídas da lista com um único clique.
